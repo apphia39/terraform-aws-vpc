@@ -24,6 +24,7 @@ variable "cidr_igw" {
 
 variable "availability_zone" {
   description = "availability zones"
+  type        = list(string)
   default     = ["ap-northeast-2a", "ap-northeast-2c"]
 }
 
