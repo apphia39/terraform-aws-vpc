@@ -1,31 +1,60 @@
-variable "cidr_vpc" {
+variable "vpc_cidr" {
   description = "CIDR block for the VPC"
   type        = string
-  default     = "172.31.0.0/16"
+  default     = ""
 }
 
-variable "cidr_private_subnet" {
-  description = "CIDR block for the PRIVATE SUBNET"
-  type        = list(any)
-  default     = ["172.31.4.0/24", "172.31.5.0/24"]
+variable "vpc_name" {
+  description = "Name for the VPC"
+  type        = string
+  default     = ""
 }
 
-variable "cidr_public_subnet" {
-  description = "CIDR block for the PUBLIC SUBNET"
-  type        = list(any)
-  default     = ["172.31.100.0/24", "172.31.101.0/24"]
+variable "subnet_num" {
+  description = "Number of the subnets"
+  type        = string
+  default     = ""
 }
 
-variable "cidr_igw" {
+variable "public_name" {
+  description = "Name for the public subnet"
+  type        = string
+  default     = ""
+}
+
+variable "private_name" {
+  description = "Name for the private subnet"
+  type        = string
+  default     = ""
+}
+
+variable "private_subnet_cidrs" {
+  description = "CIDR blocks for the PRIVATE SUBNET"
+  type        = list(string)
+  default     = []
+}
+
+variable "public_subnet_cidrs" {
+  description = "CIDR blocks for the PUBLIC SUBNET"
+  type        = list(string)
+  default     = []
+}
+
+variable "igw_name" {
+  description = "Name for the internet gateway"
+  type        = string
+  default     = ""
+}
+
+variable "igw_cidr" {
   description = "CIDR block for the INTERNET GATEWAY"
   type        = string
-  default     = "0.0.0.0/0"
+  default     = ""
 }
 
-variable "availability_zone" {
+variable "subnet_az" {
   description = "availability zones"
-  type        = list(string)
-  default     = ["ap-northeast-2a", "ap-northeast-2c"]
+  default     = []
 }
 
 
